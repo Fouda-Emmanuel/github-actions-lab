@@ -57,7 +57,7 @@ jobs:
       
       - name: Run test on other branches
         if: github.ref != 'refs/heads/main'
-        run: eacho 'Skipping tests and checkstyles'
+        run: echo 'Skipping tests and checkstyles'
 
   
   security_scan:
@@ -71,7 +71,7 @@ jobs:
         fetch-depth: 0
 
     - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@v0.34.2
+      uses: aquasecurity/trivy-action@v0.69.3
       with:
         scan-type: fs
         scan-ref: .
